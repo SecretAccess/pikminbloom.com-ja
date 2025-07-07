@@ -1,0 +1,475 @@
+/* リセットとベーススタイル */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Hiragino Sans', 'ヒラギノ角ゴシック', 'Yu Gothic', 'メイリオ', sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background: linear-gradient(135deg, #ecfdf5 0%, #d1fae5 25%, #bbf7d0 50%, #fed7aa 75%, #fef3c7 100%);
+    min-height: 100vh;
+}
+
+/* ピクミンカラー変数 */
+:root {
+    --pikmin-green: #4ade80;
+    --pikmin-orange: #fb923c;
+    --pikmin-light-green: #bbf7d0;
+    --pikmin-dark-green: #166534;
+    --pikmin-yellow: #fbbf24;
+    --white: #ffffff;
+    --gray-600: #4b5563;
+    --gray-100: #f3f4f6;
+    --red-500: #ef4444;
+    --red-100: #fee2e2;
+}
+
+/* コンテナ */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+/* ヘッダー */
+.header {
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(10px);
+    border-bottom: 2px solid rgba(74, 222, 128, 0.2);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    padding: 1rem 0;
+}
+
+.logo {
+    height: 3rem;
+    width: auto;
+    display: block;
+    margin: 0 auto;
+    border-radius: 8px;
+}
+
+/* メインコンテンツ */
+.main {
+    padding: 2rem 0;
+}
+
+/* ヒーローセクション */
+.hero {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.hero-image {
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+    border-radius: 20px;
+    box-shadow: 0 8px 32px rgba(74, 222, 128, 0.2);
+    margin-bottom: 2rem;
+}
+
+.hero-title {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: var(--pikmin-dark-green);
+    margin-bottom: 1rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.hero-description {
+    font-size: 1.2rem;
+    color: var(--gray-600);
+    margin-bottom: 2rem;
+}
+
+/* フォームセクション */
+.form-section {
+    margin-bottom: 3rem;
+}
+
+.form-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    align-items: start;
+}
+
+/* ピクミンカード */
+.pikmin-card {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    border: 2px solid rgba(74, 222, 128, 0.2);
+    border-radius: 20px;
+    box-shadow: 0 8px 32px rgba(74, 222, 128, 0.1);
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.pikmin-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 40px rgba(74, 222, 128, 0.2);
+}
+
+/* フォームカード */
+.form-card {
+    grid-column: 1;
+}
+
+.form-header {
+    background: linear-gradient(135deg, var(--pikmin-green), #22c55e);
+    color: white;
+    padding: 1.5rem;
+    text-align: center;
+}
+
+.form-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+.form-description {
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 0.9rem;
+}
+
+.form-content {
+    padding: 2rem;
+}
+
+.input-group {
+    margin-bottom: 1.5rem;
+}
+
+.input-label {
+    display: block;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--pikmin-dark-green);
+    margin-bottom: 0.5rem;
+}
+
+.pikmin-input {
+    width: 100%;
+    padding: 1rem;
+    font-size: 1.5rem;
+    font-family: 'Courier New', monospace;
+    text-align: center;
+    letter-spacing: 0.2em;
+    border: 3px solid var(--pikmin-light-green);
+    border-radius: 15px;
+    background: rgba(255, 255, 255, 0.9);
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+}
+
+.pikmin-input:focus {
+    outline: none;
+    border-color: var(--pikmin-green);
+    box-shadow: 0 0 0 3px rgba(74, 222, 128, 0.2);
+    background: white;
+}
+
+.character-count {
+    text-align: center;
+    font-size: 0.9rem;
+    color: var(--gray-600);
+    margin-top: 0.5rem;
+}
+
+.error-message {
+    background: var(--red-100);
+    color: var(--red-500);
+    padding: 0.75rem;
+    border-radius: 10px;
+    margin-bottom: 1rem;
+    font-size: 0.9rem;
+    border: 1px solid var(--red-500);
+}
+
+.pikmin-button {
+    width: 100%;
+    padding: 1rem 2rem;
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: white;
+    background: linear-gradient(135deg, var(--pikmin-green), var(--pikmin-orange));
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 4px 15px rgba(74, 222, 128, 0.3);
+}
+
+.pikmin-button:hover:not(:disabled) {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(74, 222, 128, 0.4);
+}
+
+.pikmin-button:active:not(:disabled) {
+    transform: translateY(0);
+}
+
+.pikmin-button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    transform: none;
+}
+
+/* 特典カード */
+.benefits-card {
+    grid-column: 2;
+    background: rgba(251, 146, 60, 0.1);
+    border-color: rgba(251, 146, 60, 0.3);
+}
+
+.benefits-header {
+    background: linear-gradient(135deg, var(--pikmin-orange), #ea580c);
+    color: white;
+    padding: 1.5rem;
+    text-align: center;
+}
+
+.benefits-title {
+    font-size: 1.3rem;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+.benefits-content {
+    padding: 1.5rem;
+}
+
+.benefits-list {
+    list-style: none;
+    color: #ea580c;
+    font-weight: 500;
+}
+
+.benefits-list li {
+    margin-bottom: 0.5rem;
+    padding-left: 0.5rem;
+}
+
+.benefits-image {
+    padding: 0 1.5rem 1.5rem;
+    text-align: center;
+}
+
+.group-image {
+    width: 100%;
+    max-width: 250px;
+    height: auto;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* キャラクターセクション */
+.character-section {
+    text-align: center;
+    margin-top: 3rem;
+}
+
+.character-image {
+    width: 8rem;
+    height: 8rem;
+    margin-bottom: 1rem;
+}
+
+.character-text {
+    color: var(--gray-600);
+    font-size: 1.1rem;
+}
+
+/* モーダル */
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+}
+
+.modal-content {
+    background: white;
+    padding: 2rem;
+    border-radius: 20px;
+    text-align: center;
+    max-width: 400px;
+    width: 90%;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+}
+
+.success-modal {
+    background: linear-gradient(135deg, var(--pikmin-green), #22c55e);
+    color: white;
+}
+
+.success-icon {
+    font-size: 4rem;
+    margin-bottom: 1rem;
+}
+
+.success-title {
+    font-size: 1.8rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+}
+
+.success-message {
+    font-size: 1.1rem;
+    margin-bottom: 2rem;
+    line-height: 1.6;
+}
+
+.close-btn {
+    background: rgba(255, 255, 255, 0.2);
+    border: 2px solid white;
+    color: white;
+}
+
+.close-btn:hover {
+    background: white;
+    color: var(--pikmin-green);
+}
+
+/* フッター */
+.footer {
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(10px);
+    border-top: 2px solid rgba(74, 222, 128, 0.2);
+    padding: 1.5rem 0;
+    text-align: center;
+    color: var(--gray-600);
+    margin-top: 4rem;
+}
+
+/* アニメーション */
+@keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+}
+
+@keyframes bounce-in {
+    0% { transform: scale(0.3); opacity: 0; }
+    50% { transform: scale(1.05); }
+    70% { transform: scale(0.9); }
+    100% { transform: scale(1); opacity: 1; }
+}
+
+@keyframes fall {
+    0% {
+        transform: translateY(-100vh) rotate(0deg);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(100vh) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+.float-animation {
+    animation: float 3s ease-in-out infinite;
+}
+
+.bounce-in {
+    animation: bounce-in 0.6s ease-out;
+}
+
+/* 花びらエフェクト */
+.flower-petals {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.petal {
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    background: radial-gradient(circle, var(--pikmin-yellow), var(--pikmin-orange));
+    border-radius: 50% 0;
+    animation: fall linear infinite;
+}
+
+/* レスポンシブデザイン */
+@media (max-width: 768px) {
+    .container {
+        padding: 0 0.5rem;
+    }
+    
+    .hero-title {
+        font-size: 2rem;
+    }
+    
+    .hero-description {
+        font-size: 1rem;
+    }
+    
+    .form-container {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    
+    .form-card,
+    .benefits-card {
+        grid-column: 1;
+    }
+    
+    .pikmin-input {
+        font-size: 1.2rem;
+        padding: 0.8rem;
+    }
+    
+    .character-image {
+        width: 6rem;
+        height: 6rem;
+    }
+    
+    .modal-content {
+        padding: 1.5rem;
+        width: 95%;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-title {
+        font-size: 1.5rem;
+    }
+    
+    .form-content {
+        padding: 1rem;
+    }
+    
+    .benefits-content {
+        padding: 1rem;
+    }
+    
+    .pikmin-input {
+        font-size: 1rem;
+        letter-spacing: 0.1em;
+    }
+}
+
