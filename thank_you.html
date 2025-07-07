@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>送信完了 - ピクミンブルーム 招待コード</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* サンキュー画面専用スタイル */
+        .thanks-container {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+        }
+        
+        .thanks-card {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border: 3px solid var(--pikmin-green);
+            border-radius: 30px;
+            padding: 3rem;
+            text-align: center;
+            max-width: 600px;
+            width: 100%;
+            box-shadow: 0 20px 60px rgba(74, 222, 128, 0.3);
+            animation: bounce-in 0.8s ease-out;
+        }
+        
+        .thanks-icon {
+            font-size: 5rem;
+            margin-bottom: 1.5rem;
+            animation: pulse-green 2s infinite;
+        }
+        
+        .thanks-title {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: var(--pikmin-dark-green);
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        
+        .thanks-message {
+            font-size: 1.3rem;
+            color: var(--gray-600);
+            margin-bottom: 2rem;
+            line-height: 1.8;
+        }
+        
+        .thanks-details {
+            background: linear-gradient(135deg, var(--pikmin-light-green), rgba(251, 146, 60, 0.1));
+            border-radius: 20px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            border: 2px solid rgba(74, 222, 128, 0.3);
+        }
+        
+        .thanks-details h3 {
+            color: var(--pikmin-dark-green);
+            font-size: 1.4rem;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+        }
+        
+        .thanks-list {
+            list-style: none;
+            color: var(--pikmin-dark-green);
+            font-weight: 500;
+        }
+        
+        .thanks-list li {
+            margin-bottom: 0.8rem;
+            padding: 0.5rem;
+            background: rgba(255, 255, 255, 0.7);
+            border-radius: 10px;
+            border-left: 4px solid var(--pikmin-green);
+        }
+        
+        .back-button {
+            display: inline-block;
+            padding: 1rem 2rem;
+            background: linear-gradient(135deg, var(--pikmin-green), var(--pikmin-orange));
+            color: white;
+            text-decoration: none;
+            border-radius: 25px;
+            font-weight: bold;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(74, 222, 128, 0.3);
+            margin: 0.5rem;
+        }
+        
+        .back-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(74, 222, 128, 0.4);
+            text-decoration: none;
+            color: white;
+        }
+        
+        .pikmin-characters {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin: 2rem 0;
+            flex-wrap: wrap;
+        }
+        
+        .pikmin-char {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            animation: float 3s ease-in-out infinite;
+        }
+        
+        .pikmin-char:nth-child(2) {
+            animation-delay: 0.5s;
+        }
+        
+        .pikmin-char:nth-child(3) {
+            animation-delay: 1s;
+        }
+        
+        .celebration-text {
+            font-size: 1.1rem;
+            color: var(--pikmin-orange);
+            font-weight: 600;
+            margin-top: 1rem;
+            animation: pulse-green 3s infinite;
+        }
+        
+        @media (max-width: 768px) {
+            .thanks-card {
+                padding: 2rem;
+                margin: 1rem;
+            }
+            
+            .thanks-title {
+                font-size: 2rem;
+            }
+            
+            .thanks-message {
+                font-size: 1.1rem;
+            }
+            
+            .thanks-icon {
+                font-size: 4rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- 花びらエフェクト -->
+    <div class="flower-petals" id="petals"></div>
+
+    <!-- サンキュー画面 -->
+    <div class="thanks-container">
+        <div class="thanks-card">
+            <div class="thanks-icon">🌸</div>
+            
+            <h1 class="thanks-title">送信完了！</h1>
+            
+            <p class="thanks-message">
+                招待コードの送信が完了しました。<br>
+                ピクミンブルームの素敵な世界をお楽しみください！
+            </p>
+            
+            <div class="pikmin-characters">
+                <img src="images/pikmin-character.png" alt="ピクミン1" class="pikmin-char">
+                <img src="images/pikmin-character.png" alt="ピクミン2" class="pikmin-char">
+                <img src="images/pikmin-character.png" alt="ピクミン3" class="pikmin-char">
+            </div>
+            
+            <div class="thanks-details">
+                <h3>
+                    <span>🎁</span>
+                    これからの楽しみ
+                </h3>
+                <ul class="thanks-list">
+                    <li>✨ 特別なピクミンとの出会い</li>
+                    <li>🎮 限定アイテムの獲得</li>
+                    <li>🚶‍♂️ お友達と一緒にウォーキング</li>
+                    <li>🌺 美しい花を咲かせる冒険</li>
+                    <li>📱 毎日の歩数記録と思い出作り</li>
+                </ul>
+            </div>
+            
+            <div class="celebration-text">
+                🎉 ピクミンたちがあなたを待っています！ 🎉
+            </div>
+            
+            <div style="margin-top: 2rem;">
+                <a href="index.html" class="back-button">
+                    🏠 トップページに戻る
+                </a>
+                <a href="https://pikminbloom.com/ja" class="back-button" target="_blank">
+                    🌟 公式サイトへ
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // 花びらエフェクトを作成する関数
+        function createPetal() {
+            const petal = document.createElement('div');
+            petal.className = 'petal';
+            petal.style.left = Math.random() * 100 + '%';
+            petal.style.animationDuration = (Math.random() * 3 + 2) + 's';
+            petal.style.animationDelay = Math.random() * 2 + 's';
+            
+            document.getElementById('petals').appendChild(petal);
+            
+            // アニメーション終了後に要素を削除
+            setTimeout(() => {
+                if (petal.parentNode) {
+                    petal.parentNode.removeChild(petal);
+                }
+            }, 5000);
+        }
+
+        // 花びらエフェクトを定期的に作成
+        function startPetalEffect() {
+            setInterval(createPetal, 200); // より多くの花びら
+        }
+
+        // ページ読み込み時の初期化
+        document.addEventListener('DOMContentLoaded', function() {
+            startPetalEffect();
+            
+            // お祝いアニメーション
+            setTimeout(() => {
+                const card = document.querySelector('.thanks-card');
+                card.style.transform = 'scale(1.05)';
+                setTimeout(() => {
+                    card.style.transform = 'scale(1)';
+                }, 200);
+            }, 500);
+        });
+
+        console.log('🎉 サンキュー画面が読み込まれました！');
+        console.log('🌸 ピクミンブルームの世界へようこそ！');
+    </script>
+</body>
+</html>
+
