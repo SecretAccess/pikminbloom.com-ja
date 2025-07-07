@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ピクミンブルーム 招待コード入力</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- 花びらエフェクト -->
+    <div class="flower-petals" id="petals"></div>
+
+    <!-- ヘッダー -->
+    <header class="header">
+        <div class="container">
+            <img src="images/pikmin-logo.jpg" alt="Pikmin Bloom" class="logo">
+        </div>
+    </header>
+
+    <!-- メインコンテンツ -->
+    <main class="main">
+        <div class="container">
+            <!-- ヒーローセクション -->
+            <section class="hero">
+                <img src="images/invite-campaign.jpg" alt="お友達を招待しましょう" class="hero-image float-animation">
+                <h1 class="hero-title">お友達を招待しましょう！</h1>
+                <p class="hero-description">招待コードを入力して、一緒にピクミンブルームの世界を楽しもう</p>
+            </section>
+
+            <!-- フォームセクション -->
+            <section class="form-section">
+                <div class="form-container">
+                    <!-- フォームカード -->
+                    <div class="form-card pikmin-card">
+                        <div class="form-header">
+                            <h2 class="form-title">
+                                <span class="icon">👥</span>
+                                招待コード入力
+                            </h2>
+                            <p class="form-description">9文字の半角大文字アルファベットを入力してください</p>
+                        </div>
+                        <div class="form-content">
+                            <form id="inviteForm" class="invite-form">
+                                <div class="input-group">
+                                    <label for="inviteCode" class="input-label">招待コード</label>
+                                    <input 
+                                        type="text" 
+                                        id="inviteCode" 
+                                        class="invite-input pikmin-input" 
+                                        placeholder="ABCDEFGHI" 
+                                        maxlength="9"
+                                        autocomplete="off"
+                                    >
+                                    <div class="character-count">
+                                        <span id="charCount">0</span>/9 文字
+                                    </div>
+                                </div>
+                                
+                                <div id="errorMessage" class="error-message" style="display: none;"></div>
+                                
+                                <button 
+                                    type="submit" 
+                                    id="submitBtn" 
+                                    class="submit-btn pikmin-button" 
+                                    disabled
+                                >
+                                    招待コードを送信
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+
+                    <!-- 特典カード -->
+                    <div class="benefits-card pikmin-card">
+                        <div class="benefits-header">
+                            <h3 class="benefits-title">
+                                <span class="icon">🎁</span>
+                                招待特典
+                            </h3>
+                        </div>
+                        <div class="benefits-content">
+                            <ul class="benefits-list">
+                                <li>• 特別なピクミンがもらえる</li>
+                                <li>• 限定アイテムをプレゼント</li>
+                                <li>• 一緒に歩いて楽しもう</li>
+                            </ul>
+                        </div>
+                        <div class="benefits-image">
+                            <img src="images/pikmin-group.jpg" alt="ピクミンたち" class="group-image">
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- キャラクターセクション -->
+            <section class="character-section">
+                <img src="images/pikmin-character.png" alt="ピクミンキャラクター" class="character-image bounce-in">
+                <p class="character-text">みんなでピクミンブルームを楽しもう！</p>
+            </section>
+        </div>
+    </main>
+
+    <!-- 成功モーダル -->
+    <div id="successModal" class="modal" style="display: none;">
+        <div class="modal-content success-modal">
+            <div class="success-icon">✅</div>
+            <h2 class="success-title">送信完了！</h2>
+            <p class="success-message">
+                招待コードを送信しました。<br>
+                ピクミンブルームの世界をお楽しみください！
+            </p>
+            <button id="closeModal" class="close-btn pikmin-button">閉じる</button>
+        </div>
+    </div>
+
+    <!-- フッター -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 Pikmin Bloom 招待コード入力フォーム</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
